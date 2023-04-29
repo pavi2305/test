@@ -6,6 +6,7 @@ module.exports = function(passport){
     opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
     opts.secretOrKey = CONFIG.jwt_encryption;
     console.log('config',opts);
+    console.log('123')
 
     passport.use(new JwtStrategy(opts,async function(jwt_payload,done){
         console.log('jwt payload', jwt_payload);
